@@ -99,13 +99,13 @@ ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) +
   theme(plot.background = element_rect(color = NA, fill = '#080A0D'),
         panel.grid = element_blank(),
         panel.grid.major.y = element_line(size = 0.2, color = lighten('#080A0D', 0.2)),
-        text = element_text(color = '#e3e3e3'),
+        text = element_text(color = 'White'),
         legend.position = c(.5, .080), 
         legend.key.width = unit(1, "lines"),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
         axis.text.y =element_text(size=8), # y-numbers
-        axis.title.y =element_text(size=8, color='#9BC6DA')
+        axis.title.y =element_text(size=8, color='white')
   ) +
   geom_hline(data = tibble(y = 6:9),
              aes(yintercept = y),
@@ -140,7 +140,7 @@ ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) +
   ggtitle("'Schitt's Creek episode ratings (IMDb)") +
   
   annotate_richtext(label = "S6 E13 & E14 are the best<br>rated episodes (9.4)",
-                    x = 76, y = 9.9, color = '#D9D3BE') +
+                    x = 72, y = 9.9, color = '#D9D3BE') +
   geom_curve2(aes(x = 94, xend = 90, y = 9.5, yend = 9.95), color = '#D9D3BE',
               curvature = 0.4) +
   
@@ -152,7 +152,7 @@ ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) +
 a
 
 
-logo <- readPNG("SC.png")
+logo <- readPNG("C:/Users/Annapurani/Desktop/SC.png")
 
 ggdraw(a) +
   draw_image(logo, x = +.35, y = -.25, scale = .12)
