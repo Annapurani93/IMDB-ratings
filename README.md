@@ -1,6 +1,8 @@
 # IMDB-ratings
 
 This is an analysis of the IMDB ratings of Schitt's Creek show on Netflix
+
+
 Datasets: https://datasets.imdbws.com/
 Documentation: https://www.imdb.com/interfaces/
 
