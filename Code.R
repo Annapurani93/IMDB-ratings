@@ -1,22 +1,12 @@
-install.packages("readr")
 library(readr)
-install.packages("tidyverse")
 library(tidyverse)
-install.packages("ggplot2")
 library(ggplot2)
-install.packages("colorspace")
 library(colorspace)
-install.packages("ggfx")
 library(ggfx)
-install.packages("ggtext")
 library(ggtext)
-install.packages("ragg")
 library(ragg)
-install.packages("cowplot")
 library(cowplot)
-install.packages("showtext")
 library(showtext)
-install.packages("png")
 library(png)
 
 read_tsv("basics.tsv")->basics
@@ -152,7 +142,7 @@ ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) +
 a
 
 
-logo <- readPNG("C:/Users/Annapurani/Desktop/SC.png")
+logo <- readPNG("SC.png")
 
 ggdraw(a) +
   draw_image(logo, x = +.35, y = -.25, scale = .12)
