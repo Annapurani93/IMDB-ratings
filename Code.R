@@ -1,12 +1,22 @@
+install.packages("readr")
 library(readr)
+install.packages("tidyverse")
 library(tidyverse)
+install.packages("ggplot2")
 library(ggplot2)
+install.packages("colorspace")
 library(colorspace)
+install.packages("ggfx")
 library(ggfx)
+install.packages("ggtext")
 library(ggtext)
+install.packages("ragg")
 library(ragg)
+install.packages("cowplot")
 library(cowplot)
+install.packages("showtext")
 library(showtext)
+install.packages("png")
 library(png)
 
 read_tsv("basics.tsv")->basics
@@ -85,8 +95,8 @@ geom_curve2 <- function(..., curvature = 0.2) {
 }
 
 
-ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) +
-  theme(plot.background = element_rect(color = NA, fill = '#080A0D'),
+ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) + theme_minimal()+
+  theme(plot.background = element_rect(color = 'black', fill = 'black'),
         panel.grid = element_blank(),
         panel.grid.major.y = element_line(size = 0.2, color = lighten('#080A0D', 0.2)),
         text = element_text(color = 'White'),
@@ -103,14 +113,14 @@ ggplot(data = df_sc_avg, aes(episode_mod, imdb_rating, group=factor(season))) +
              size = .5) +
   geom_segment(aes(xend = episode_mod,
                    yend = avg), 
-                   col=colors["yellow"]) +
+                   col="yellow") +
   geom_line(data = df_lines,
-            aes(x_group, y), col=colors["yellow"],
+            aes(x_group, y), col="yellow",
             size = 1.5) +
-  geom_point(aes(size = total_votes), col=colors["yellow"]) +
+  geom_point(aes(size = total_votes), col="yellow") +
   geom_label(aes(mid, 5.0,
                  label = glue::glue(" Season {season} ")),
-             col=colors["yellow"],
+             col="yellow",
              fill = NA,
              size=3,
              label.padding = unit(.1, "lines"),
@@ -147,3 +157,6 @@ logo <- readPNG("SC.png")
 ggdraw(a) +
   draw_image(logo, x = +.35, y = -.25, scale = .12)
 
+
+ggsave(("SC1.pdf"), 
+       width = 15, height = 9) 
